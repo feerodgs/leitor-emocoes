@@ -76,7 +76,7 @@
     let model, webcam, maxPredictions;
 
     async function init() {
-      const URL = "https://teachablemachine.withgoogle.com/models/L672X0wqW/";
+      const URL = "https://teachablemachine.withgoogle.com/models/nKj-mvq0Q/";
       const modelURL = URL + "model.json";
       const metadataURL = URL + "metadata.json";
 
@@ -84,7 +84,7 @@
       maxPredictions = model.getTotalClasses();
 
       const flip = true;
-      webcam = new tmImage.Webcam(350, 350, flip);
+      webcam = new tmImage.Webcam(350, 350, flip); // AUMENTADO
       await webcam.setup();
       await webcam.play();
       window.requestAnimationFrame(loop);
