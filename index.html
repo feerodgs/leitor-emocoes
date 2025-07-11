@@ -68,7 +68,8 @@
 </head>
 <body>
   <h1>Detector de Emoções</h1>
-  <button onclick="init()">Iniciar Detecção</button>
+  <button id="startButton" onclick="init()">Iniciar Detecção</button>
+
   <div id="webcam"></div>
   <div id="result">Aguardando...</div>
 
@@ -76,6 +77,8 @@
     let model, webcam, maxPredictions;
 
     async function init() {
+      document.getElementById("startButton").disabled = true;
+
       const URL = "https://teachablemachine.withgoogle.com/models/L672X0wqW/";
       const modelURL = URL + "model.json";
       const metadataURL = URL + "metadata.json";
